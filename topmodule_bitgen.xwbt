@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Workspace\RISC_CPU\topmodule.ncd
+OUTFILE=C:\Workspace\RISC_CPU\topmodule.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Workspace\RISC_CPU
+LICENSE=WebPack
+USER_INFO=__0_0_0

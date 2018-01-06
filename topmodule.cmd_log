@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "C:/Workspace/RISC_CPU/topmodule.xst" -ofn "C:/Workspace/RISC_CPU/topmodule.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim topmodule.ngc topmodule_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 topmodule.ngc topmodule.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topmodule_map.ncd topmodule.ngd topmodule.pcf 
+par -w -intstyle ise -ol high -mt off topmodule_map.ncd topmodule.ncd topmodule.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml topmodule.twx topmodule.ncd -o topmodule.twr topmodule.pcf 
+bitgen -intstyle ise -f topmodule.ut topmodule.ncd 
